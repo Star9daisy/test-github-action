@@ -19,6 +19,8 @@ jobs:
         source root/bin/thisroot.sh
         root --version
         export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROOTSYS/lib
+        echo $LD_LIBRARY_PATH
+        echo $ROOTSYS
         pytest tests
     # - name: Install requirements
     #   run: pip install -r api/requirements.txt
