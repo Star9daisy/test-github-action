@@ -16,6 +16,7 @@ jobs:
     - run: wget https://root.cern/download/root_v6.28.04.Linux-centos8-x86_64-gcc8.5.tar.gz
     - run: tar -xzvf root_v6.28.04.Linux-centos8-x86_64-gcc8.5.tar.gz
     - run: |
+        python --version
         source root/bin/thisroot.sh
         root --version
         echo $PYTHONPATH
