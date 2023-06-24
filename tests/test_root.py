@@ -1,3 +1,4 @@
-import ROOT
+def test_root():
+    import ROOT
 
-print(ROOT.__file__)
+    print(ROOT.__file__)
