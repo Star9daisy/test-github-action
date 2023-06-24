@@ -13,16 +13,18 @@ jobs:
         python-version: '3.8'
     - name: Install requirements
       run: pip install -r tests/requirements.txt
-    - run: wget https://root.cern/download/root_v6.28.04.Linux-centos8-x86_64-gcc8.5.tar.gz
-    - run: tar -xzvf root_v6.28.04.Linux-centos8-x86_64-gcc8.5.tar.gz
-    - run: ls root/lib
-    - run: env
-    - run: |
-        python --version
-        source root/bin/thisroot.sh
-        root --version
-        echo $PYTHONPATH
-        pytest tests
+    - run: conda install -c conda-forge root
+    - run: root --version
+    # - run: wget https://root.cern/download/root_v6.28.04.Linux-centos8-x86_64-gcc8.5.tar.gz
+    # - run: tar -xzvf root_v6.28.04.Linux-centos8-x86_64-gcc8.5.tar.gz
+    # - run: ls root/lib
+    # - run: env
+    # - run: |
+    #     python --version
+    #     source root/bin/thisroot.sh
+    #     root --version
+    #     echo $PYTHONPATH
+    #     pytest tests
     # - name: Install requirements
     #   run: pip install -r api/requirements.txt
     # - name: Run tests and collect coverage
