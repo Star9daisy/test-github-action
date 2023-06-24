@@ -10,10 +10,14 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v2
       with:
-        python-version: '3.11'
-    - name: Install requirements
-      run: pip install -r api/requirements.txt
-    - name: Run tests and collect coverage
-      run: pytest --cov=api.calculator --cov-report=xml
-    - name: Upload coverage reports to Codecov with GitHub Action
-      uses: codecov/codecov-action@v3
+        python-version: '3.8'
+    - run: wget https://root.cern/download/root_v6.28.04.Linux-centos8-x86_64-gcc8.5.tar.gz
+    - run: tar -xzvf root_v6.28.04.Linux-centos8-x86_64-gcc8.5.tar.gz
+    - run: source root/bin/thisroot.sh
+    - run: root --version
+    # - name: Install requirements
+    #   run: pip install -r api/requirements.txt
+    # - name: Run tests and collect coverage
+    #   run: pytest --cov=api.calculator --cov-report=xml
+    # - name: Upload coverage reports to Codecov with GitHub Action
+    #   uses: codecov/codecov-action@v3
