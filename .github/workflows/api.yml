@@ -15,6 +15,8 @@ jobs:
       run: pip install -r tests/requirements.txt
     - run: wget https://root.cern/download/root_v6.28.04.Linux-centos8-x86_64-gcc8.5.tar.gz
     - run: tar -xzvf root_v6.28.04.Linux-centos8-x86_64-gcc8.5.tar.gz
+    - run: ls root/lib
+    - run: env
     - run: |
         python --version
         source root/bin/thisroot.sh
