@@ -26,6 +26,9 @@ jobs:
         wget https://root.cern/download/root_v6.28.04.Linux-centos8-x86_64-gcc8.5.tar.gz
         tar -xzvf root_v6.28.04.Linux-centos8-x86_64-gcc8.5.tar.gz
         source root/bin/thisroot.sh
+    
+    - name: Test environment variables
+      run: python tests/test_root.py
 
     - name: Run script
       run: |
