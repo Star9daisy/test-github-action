@@ -19,7 +19,7 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev libxft-dev libxext-dev tar gfortran subversion
-        pip install -r tests/requrements.txt
+        pip install -r tests/requirements.txt
 
     - name: Install ROOT
       run: |
