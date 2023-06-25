@@ -31,7 +31,11 @@ jobs:
       run: |
         source root/bin/thisroot.sh
         python tests/test_root.py
+    - name: Check library
+      run: |
+        find root/lib -name "libcppyy3_8*"
 
     - name: Run script
       run: |
-        source root/bin/thisroot.sh && pytest tests
+        source root/bin/thisroot.sh
+        pytest tests
