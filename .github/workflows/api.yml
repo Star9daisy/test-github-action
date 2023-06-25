@@ -33,7 +33,10 @@ jobs:
         python tests/test_root.py
     - name: Check library
       run: |
+        pwd
+        ls
         find root/lib -name "libcppyy3_8*"
+        ls root/lib
 
     - name: Run script
       run: |
