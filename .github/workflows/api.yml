@@ -40,7 +40,7 @@ jobs:
         find root/lib -name "libcppyy3_8*"
         ls root/lib
 
-    # - name: Run script
-    #   run: |
-    #     source root/bin/thisroot.sh
-    #     pytest tests
+    - name: Run script
+      run: |
+        source root/bin/thisroot.sh
+        pytest tests
