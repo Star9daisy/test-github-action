@@ -28,7 +28,9 @@ jobs:
         source root/bin/thisroot.sh
     
     - name: Test environment variables
-      run: python tests/test_root.py
+      run: |
+        source root/bin/thisroot.sh
+        python tests/test_root.py
 
     - name: Run script
       run: |
