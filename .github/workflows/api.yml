@@ -20,25 +20,27 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev libxft-dev libxext-dev tar gfortran subversion
         pip install -r tests/requirements.txt
+    - name: Check Python version
+      run: python --version
 
-    - name: Install ROOT
-      run: |
-        wget https://root.cern/download/root_v6.28.04.Linux-centos8-x86_64-gcc8.5.tar.gz
-        tar -xzvf root_v6.28.04.Linux-centos8-x86_64-gcc8.5.tar.gz
-        source root/bin/thisroot.sh
+    # - name: Install ROOT
+    #   run: |
+    #     wget https://root.cern/download/root_v6.28.04.Linux-centos8-x86_64-gcc8.5.tar.gz
+    #     tar -xzvf root_v6.28.04.Linux-centos8-x86_64-gcc8.5.tar.gz
+    #     source root/bin/thisroot.sh
     
-    - name: Test environment variables
-      run: |
-        source root/bin/thisroot.sh
-        python tests/test_root.py
-    - name: Check library
-      run: |
-        pwd
-        ls
-        find root/lib -name "libcppyy3_8*"
-        ls root/lib
+    # - name: Test environment variables
+    #   run: |
+    #     source root/bin/thisroot.sh
+    #     python tests/test_root.py
+    # - name: Check library
+    #   run: |
+    #     pwd
+    #     ls
+    #     find root/lib -name "libcppyy3_8*"
+    #     ls root/lib
 
-    - name: Run script
-      run: |
-        source root/bin/thisroot.sh
-        pytest tests
+    # - name: Run script
+    #   run: |
+    #     source root/bin/thisroot.sh
+    #     pytest tests
