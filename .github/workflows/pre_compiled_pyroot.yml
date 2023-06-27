@@ -46,17 +46,14 @@ jobs:
         wget https://launchpad.net/mg5amcnlo/3.0/3.3.x/+download/MG5_aMC_v3.3.2.tar.gz
         mkdir madgraph5
         tar xf MG5_aMC_v3.3.2.tar.gz --strip=1 --directory=madgraph5
+        ln -fs madgraph5/bin/mg5_aMC /usr/local/bin/
     
     - name: Install Pythia8 & Delphes in Madgraph5
       run: |
         source root/bin/thisroot.sh
-        cd madgraph5
-        ./bin/mg5_aMC << EOF
-        n
-        install pythia8
-        install Delphes
-        quit
-        EOF
+        echo "n" | mg5_aMC
+        echo "install pythia8" | mg5_aMC
+        echo "install Delphes" | mg5_aMC
 
     - name: Run tests and collect coverage
       run: |
