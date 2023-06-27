@@ -39,7 +39,6 @@ jobs:
         ls
         find root/lib -name "libcppyy3_8*"
         ls root/lib
-        - name: Install Madgraph5
 
     - name: Install Madgraph5
       run: |
