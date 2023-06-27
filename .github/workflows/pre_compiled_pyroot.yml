@@ -42,6 +42,7 @@ jobs:
 
     - name: Install Madgraph5
       run: |
+        pip install six
         wget https://launchpad.net/mg5amcnlo/3.0/3.3.x/+download/MG5_aMC_v3.3.2.tar.gz
         mkdir madgraph5
         tar xf MG5_aMC_v3.3.2.tar.gz --strip=1 --directory=madgraph5
