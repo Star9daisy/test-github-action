@@ -52,6 +52,7 @@ jobs:
         source root/bin/thisroot.sh
         cd madgraph5
         ./bin/mg5_aMC << EOF
+        n
         install pythia8
         install Delphes
         quit
