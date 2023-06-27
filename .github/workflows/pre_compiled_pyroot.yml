@@ -39,6 +39,23 @@ jobs:
         ls
         find root/lib -name "libcppyy3_8*"
         ls root/lib
+        - name: Install Madgraph5
+
+    - name: Install Madgraph5
+      run: |
+        wget https://launchpad.net/mg5amcnlo/3.0/3.3.x/+download/MG5_aMC_v3.3.2.tar.gz
+        mkdir madgraph5
+        tar xf MG5_aMC_v3.3.2.tar.gz --strip=1 --directory=madgraph5
+    
+    - name: Install Pythia8 & Delphes in Madgraph5
+      run: |
+        source root/bin/thisroot.sh
+        cd madgraph5
+        ./bin/mg5_aMC << EOF
+        install pythia8
+        install Delphes
+        quit
+        EOF
 
     - name: Run tests and collect coverage
       run: |
